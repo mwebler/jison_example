@@ -1,0 +1,29 @@
+<!DOCTYPE_HTML>
+<html lang="en">
+    <head>
+        <title>Calculator tester</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="calculator.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("button").click(function(){
+                    try{
+                        var result = parser.parse($("input").val());
+                        $("span").html(result);
+                
+                    } catch (e){
+                        $("span").html(String(e));
+                    }
+                });
+            });
+        </script>
+        <p>
+            <input type="text" value="2+2"/><button>equals</button>
+        </p>
+        <p>
+            Resultado: <span></span>
+        </p>
+    </body>
+</html>
